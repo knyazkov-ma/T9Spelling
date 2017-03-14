@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9Spelling.Core", "T9Spelli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9Spelling.Tests", "T9Spelling.Tests\T9Spelling.Tests.csproj", "{8CC2574B-9749-4DB2-9CE5-B6DD668F08CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InputTestFiles", "InputTestFiles", "{E2745A04-724B-4585-8014-1A4FC5317C8A}"
+	ProjectSection(SolutionItems) = preProject
+		msg.in = msg.in
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
