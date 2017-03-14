@@ -64,6 +64,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\T9Spelling.Core\T9Spelling.Core.csproj">
+      <Project>{65d3b507-4c6c-4ceb-8b3e-0897198fad60}</Project>
+      <Name>T9Spelling.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T9Spelling\T9Spelling.csproj">
+      <Project>{447ab74b-5df2-4bab-9734-ec7e82644ee0}</Project>
+      <Name>T9Spelling</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

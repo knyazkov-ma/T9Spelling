@@ -20,18 +20,28 @@ namespace T9Spelling.Core.Service
             }
             
             StringBuilder stringBuilder = new StringBuilder();
+            string prevCode = null;
+            string currCode = null;
+
             foreach (char c in message)
             {
-                if (c != ' ' && !map.ContainsKey(c))
+                if (!map.ContainsKey(c))
                 {
                     setErrorMsg("message", c.ToString());
                     continue;
                 }
-                
-                if (c != ' ')
-                    stringBuilder.Append(map[c]);
-                else
-                    stringBuilder.Append(" ");
+
+                currCode = map[c];
+
+                if (prevCode != null)
+                {
+                    if (prevCode[prevCode.Length - 1] == currCode[0])
+                        stringBuilder.Append(" "); //The space character ' ' should be printed to indicate a pause
+                }
+
+                prevCode = currCode;
+
+                stringBuilder.Append(currCode);
             }
 
             if(errorMessages!= null && errorMessages.Any())

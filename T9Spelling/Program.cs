@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using T9Spelling.Core.Service.Interface;
+using T9Spelling.Resources;
 
 namespace T9Spelling
 {
@@ -15,14 +16,18 @@ namespace T9Spelling
 
         public void Run()
         {
-            string path;
-            Console.WriteLine("Введите полный путь до файла с сообщениями");
-            path = Console.ReadLine();
-            IList<string> outputs = messageService.GetOutputs(path, false);
+            Console.WriteLine(ConsoleMessageResource.EnterPathToInputFile);
+            string path = Console.ReadLine();
 
+            Console.WriteLine(ConsoleMessageResource.IsLongMessages);
+            string yes = Console.ReadLine();
+
+            IList<string> outputs = messageService.GetOutputs(path, yes == "y");
+            
             string outPath = path + ".out";
             messageService.SaveOutputs(outPath, outputs);
-            Console.WriteLine("Закодированный файл: " + outPath);
+
+            Console.WriteLine(ConsoleMessageResource.OutputFile + outPath);
         }
     }
 }

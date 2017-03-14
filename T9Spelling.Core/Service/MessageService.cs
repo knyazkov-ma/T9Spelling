@@ -54,7 +54,7 @@ namespace T9Spelling.Core.Service
                 if (!String.IsNullOrEmpty(messages[i]))
                 {
                     N++;
-                    outputs.Add(String.Format("Case #{0}: {1}", N,
+                    outputs.Add(String.Format(FormatStringResource.OutputMessage, N,
                         stringService.GetT9Code(map, messages[i], largeInput, inputLengthConstraint)));
                 }
 
