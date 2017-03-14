@@ -11,23 +11,23 @@ namespace T9Spelling.Core.Service
     {
         private readonly ISettingsRepository settingsRepository;
         private readonly ILetterMappingRepository letterMappingRepository;
-        private readonly IFileRepository fileRepository;
+        private readonly IMessageRepository messageRepository;
         private readonly IStringService stringService;
 
         public MessageService(ILetterMappingRepository letterMappingRepository,
             ISettingsRepository settingsRepository,
-            IFileRepository fileRepository,
+            IMessageRepository messageRepository,
             IStringService stringService)
         {
             this.letterMappingRepository = letterMappingRepository;
             this.settingsRepository = settingsRepository;
-            this.fileRepository = fileRepository;
+            this.messageRepository = messageRepository;
             this.stringService = stringService;
         }
 
         public IList<string> GetOutputs(string path, bool largeInput)
         {
-            string[] messages = fileRepository.GetAllLines(path);
+            string[] messages = messageRepository.GetAllLines(path);
 
             if (messages == null || !messages.Any())
                 return null;
@@ -63,7 +63,7 @@ namespace T9Spelling.Core.Service
 
         public void SaveOutputs(string path, IList<string> outputs)
         {
-            fileRepository.WriteAllLines(path, outputs.ToArray());
+            messageRepository.WriteAllLines(path, outputs.ToArray());
         }
 
 

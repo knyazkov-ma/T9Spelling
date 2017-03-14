@@ -3,7 +3,7 @@ using T9Spelling.Core.Repository.Interface;
 
 namespace T9Spelling.Core.Repository
 {
-    public class FileRepository : IFileRepository
+    public class FileRepository : IMessageRepository
     {
         public string[] GetAllLines(string path)
         {

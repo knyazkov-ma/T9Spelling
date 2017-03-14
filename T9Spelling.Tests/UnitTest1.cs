@@ -32,7 +32,7 @@ namespace T9Spelling.Tests
         {
             ILetterMappingRepository letterMappingRepository = new LetterMappingRepository();
             ISettingsRepository settingsRepository = new SettingsRepository();
-            IFileRepository fileRepository = Mock.Of<IFileRepository>(s => s.GetAllLines("mockPath") == new string[5] 
+            IMessageRepository messageRepository = Mock.Of<IMessageRepository>(s => s.GetAllLines("mockPath") == new string[5] 
             {
                 "4",
                 "hi",
@@ -43,7 +43,7 @@ namespace T9Spelling.Tests
             IStringService stringService = new StringService();
             IMessageService messageService = new MessageService(letterMappingRepository,
                 settingsRepository,
-                fileRepository,
+                messageRepository,
                 stringService);
 
             IList<string> outputs = messageService.GetOutputs("mockPath", false);

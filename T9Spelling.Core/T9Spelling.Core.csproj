@@ -44,7 +44,7 @@
     <Compile Include="DataServiceInfo.cs" />
     <Compile Include="InMemoryLetterMappingStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Interface\IFileRepository.cs" />
+    <Compile Include="Repository\Interface\IMessageRepository.cs" />
     <Compile Include="Repository\Interface\ISettingsRepository.cs" />
     <Compile Include="Repository\FileRepository.cs" />
     <Compile Include="Repository\SettingsRepository.cs" />

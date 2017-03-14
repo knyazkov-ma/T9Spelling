@@ -43,7 +43,7 @@ namespace T9Spelling
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             
-            container.RegisterType<IFileRepository, FileRepository>();
+            container.RegisterType<IMessageRepository, FileRepository>();
             container.RegisterType<ILetterMappingRepository, LetterMappingRepository>();
             container.RegisterType<ISettingsRepository, SettingsRepository>();
 
