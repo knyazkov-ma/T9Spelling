@@ -54,7 +54,7 @@ namespace T9Spelling.Tests
         }
 
         [TestMethod]
-        public void TestStringService_GetOutputs()
+        public void TestStringService_GetT9Code()
         {
             ILetterMappingRepository letterMappingRepository = new LetterMappingRepository();
             ISettingsRepository settingsRepository = new SettingsRepository();
