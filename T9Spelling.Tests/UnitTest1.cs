@@ -13,7 +13,7 @@ namespace T9Spelling.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMappingRepository()
+        public void TestMappingRepository_LetterMapping()
         {
             ILetterMappingRepository letterMappingRepository = new LetterMappingRepository();
             IDictionary<char, string> map = letterMappingRepository.Get();
